@@ -10,7 +10,7 @@ namespace Labb6_Arv_Zoo
 {
     public class Reptiles : Animal
     {
-        protected string egg = "We laying eggs"; //Special property for reptiles
+        protected string egg = "We laying eggs"; //Special property for reptiles //
         public Reptiles()
         {
             this.name = name;
