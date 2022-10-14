@@ -16,6 +16,7 @@ namespace Labb6_Arv_Zoo
             Lion lion = new Lion();
             Human human = new Human();
             Reptiles reptiles = new();
+            
 
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("               _________________");
@@ -62,11 +63,12 @@ namespace Labb6_Arv_Zoo
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("|#1|Mammal\n" +
                     "|#2|Reptiles\n" +
-                    "|#3|Go home");
+                    "|#3|Garden\n"+
+                    "|#4|Go home");
                 Console.ResetColor();
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.WriteLine("What kind of animal do you want to see?");
+                Console.WriteLine("Where are you going to go?");
                 Console.ResetColor();
                 bool answer = true;
                 int animalChoise;
@@ -83,10 +85,15 @@ namespace Labb6_Arv_Zoo
                             answer = false;
                             break;
                         case 3:
+                            GardenMenu();
+                            answer = false;
+                            break;
+                        case 4:
                             Console.WriteLine("Thank you for visiting, hope to see you again soon! ");
                             Environment.Exit(-1);
                             Console.ReadKey();
                             break;
+
                     }
                 if (answer)
                 {
@@ -253,6 +260,19 @@ namespace Labb6_Arv_Zoo
             {
                 goto Cats; //go back to Cats in case2
             }
+        }
+        public static void GardenMenu()
+        {
+            Console.Clear();
+            Plants plants = new Plants();
+
+            Console.WriteLine(plants);
+            Console.WriteLine();
+            plants.PrintAnimal();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("Enter to main entrance");
+            Console.ResetColor();
         }
     }
 }
