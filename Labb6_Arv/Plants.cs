@@ -37,7 +37,9 @@ namespace Labb6_Arv_Zoo
         }
         public override void MakeSound()
         {
-            Console.WriteLine("You can liisten to our sound when the wind blows: wiieeeeiwwwwwiiiiee");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("You can listen to our sound when the wind blows: wiieeeeiwwwwwiiiiee");
+            Console.ResetColor();
         }
         public void Recover()
         {
