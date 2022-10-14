@@ -20,14 +20,19 @@ namespace Labb6_Arv
             this.power = 7;
             this.greet = "'Bark bark bark'";
             this.help = "I like to help"; //Default value speceial property
+            this.gender = gender;
         }
+        public Dog(string name, int weight, int age, int power, string greet, string help, string gender) : base(name, weight, age, power, greet, gender)
+        {
+            this.help = help;
+            
+        }
+
         public override void PrintAnimal()
         {
-            Console.BackgroundColor = ConsoleColor.DarkGray;
-            Console.ForegroundColor = ConsoleColor.Black;
             Console.Write(name + " sound: ");
             MakeSound();
-            Console.ResetColor();
+
         }
         public override void MakeSound()
         {            
@@ -49,24 +54,49 @@ namespace Labb6_Arv
         protected void Fetch(string thing) //Special method for dog
         {
             Console.WriteLine("I like to play with my " + thing + " when i´m outside!");
-        }        
+        }
+        public override string ToString()
+        {
+            return String.Format("{0} Name: {1} Weight: {2} Age: {3} Power: {4} Greet",
+            this.GetType().Name,
+            this.name,
+            this.weight,
+            this.age,
+            this.power,
+            this.greet);
+
+        }
     }
 
     //-----------------------------------------------------------------------------
 
     public class Labrador : Dog
     {
-        protected string Friendly { get; set; } //Special property
+        protected string friendly { get; set; } //Special property
         public Labrador()
         {
             this.name = "Samy";
-            this.Friendly = "We are very friendly and good with kids!"; //default value special property
+            this.greet = greet;
+            this.weight = 28;
+            this.age = 4;
+            this.power = 5;
+            this.friendly = "We are very friendly and good with kids"; //default value special property
+            this.gender = "female";
+        }
+        public Labrador(string name, int weight, int age, int power, string greet, string help, string friendly, string gender) : base(name, weight, age, power, greet, help, gender)
+        {
+            this.friendly = friendly;
+            this.gender = gender;
         }
         
         public override void PrintAnimal()
         {
-            Console.WriteLine("I´m a Labrador and my name is " + name + "!");
-            MakeSound();
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Eat();
+            Drink();
+            UsedAs();
+            Sleep();
+            Console.ResetColor();
         }
         public override void MakeSound()
         {
@@ -79,31 +109,58 @@ namespace Labb6_Arv
         }
         public override void Sleep()
         {
-            Console.WriteLine("'ZZzzzzZZZzzzzZZZZ'");
+            Console.WriteLine("After training,  I like to sleep 'ZZzzzzZZZzzzzZZZZ'");
         }
         public override void Drink()
         {
-            Console.WriteLine("slurp slurp slurp I drink water!");
+            Console.WriteLine("Slurp slurp slurp I drink water when I am thirsty!");
         }        
-        protected void Traing() //Special method for Labrador
+        protected void UsedAs() //Special method for Labrador
         {
             Console.WriteLine("I can be trained to become a therapy and service dog!");
         }
-
+        public override string ToString()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            return String.Format("Race: {0}\nName: {1}\nGender: {2}\nWeight: {3} kg\nAge: {4} year\nPower: {5}/10\nGreet: {6}\nMentality: {7}",
+            this.GetType().Name,
+            this.name,
+            this.gender,
+            this.weight,
+            this.age,
+            this.power,
+            this.greet,
+            this.friendly);
+            Console.ResetColor();
+        }
     }   //--------------------------------------------------------------------------------------
-
     public class BullDog : Dog
     {
-        protected string Courage { get; set; } //Special property
+        protected string courage { get; set; } //Special property
         public BullDog()
-        {
+        {            
             this.name = "Fletcher";
-            this.Courage = "I have reputation for courage, therefore I can be your watchdog!"; 
+            this.greet = greet;
+            this.weight = 23;
+            this.age = 4;
+            this.power = 8;            
+            this.courage = "I have reputation for courage, therefore I can be your watchdog!";
+            this.gender = "male";            
         }
+        public BullDog(string name, int weight, int age, int power, string greet, string courage, string help, string gender) : base(name, weight, age, power, greet, help, gender)
+        {
+            this.courage = courage;
+            this.gender = gender;            
+        }
+
         public override void PrintAnimal() 
         {
-            Console.WriteLine("I´m a BullDog and my name is " + name + "!");
-            MakeSound();
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Eat();
+            Drink();
+            Watch();
+            Sleep();
+            Console.ResetColor();
         }
         public override void MakeSound()
         {
@@ -116,15 +173,29 @@ namespace Labb6_Arv
         }
         public override void Sleep()
         {
-            Console.WriteLine("'ZZzzzzZZZzzzzZZZZ'");
+            Console.WriteLine("When I'm not guarding you, I like to sleep 'ZZzzzzZZZzzzzZZZZ'");
         }
         public override void Drink()
         {
-            Console.WriteLine("slurp slurp slurp I drink water!");
+            Console.WriteLine("Slurp slurp slurp I love drink water!");
         }
         protected void Watch() //Special method for BullDog
         {
-            Console.WriteLine("If I become yours, I will guard you!"); 
+            Console.WriteLine("I will guard you with my life "); 
+        }
+        public override string ToString()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            return String.Format("Race: {0}\nName: {1}\nGender: {2}\nWeight: {3} kg\nAge: {4} year\nPower: {5}/10\nGreet: {6}\nCourage: {7}",
+            this.GetType().Name,
+            this.name,
+            this.gender,
+            this.weight,
+            this.age,
+            this.power,
+            this.greet,
+            this.courage);
+            Console.ResetColor();
         }
 
     }
