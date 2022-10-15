@@ -23,7 +23,7 @@ namespace Labb6_Arv
             this.age = int.MaxValue;
             this.power = 10;
             this.greet = "NoGreet";
-            this.gender = "Male/Female";
+            this.gender = "NoGender";
         }
 
         public Animal(string name, int weight, int age, int power, string greet, string gender)

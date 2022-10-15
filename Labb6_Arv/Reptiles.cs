@@ -14,11 +14,11 @@ namespace Labb6_Arv_Zoo
         public Reptiles()
         {
             this.name = name;
-            this.weight = weight;
-            this.age = age;
+            this.weight = 0;
+            this.age = 0;
             this.power = 7;
-            this.greet = greet;
-            this.gender = gender;
+            this.greet = "Depends on reptile!";
+            this.gender = "Male/Female";
         }
         public Reptiles(string name, int age, int weight, int power, string greet, string gender, string egg) : base(name, weight, age, power, greet, gender)
         {
@@ -47,7 +47,7 @@ namespace Labb6_Arv_Zoo
         public override string ToString()
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            return String.Format("Race: {0}\nName: {1}\nGender: {2}\nWeight: {3} kg\nAge: {4} year\nPower: {5}/10\nGreet: {6}",
+            return String.Format("Race: {0}\nName: {1}\nGender: {2}\nWeight: {3} kg++\nAge: {4} year++\nPower: {5}/10\nGreet: {6}",
             this.GetType().Name,
             this.name,
             this.gender,

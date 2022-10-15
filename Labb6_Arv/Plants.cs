@@ -12,12 +12,12 @@ namespace Labb6_Arv_Zoo
         public string grow { get; set; }
         public Plants()
         {
-            this.name = name;
-            this.weight = weight;
-            this.age = age;
-            this.power = power;
-            this.greet = greet; 
-            this.gender = gender;
+            this.name = "Depends what you grow!";
+            this.weight = 100;
+            this.age = 0;
+            this.power = 10;
+            this.greet = "In the wind you can hear us!"; 
+            this.gender = "We have no gender!";
             this.grow = grow;
         }        
         public Plants(string name, int age, int weight, int power, string greet, string gender, string grow) : base(name, weight, age, power, greet, gender)
@@ -30,8 +30,8 @@ namespace Labb6_Arv_Zoo
             Console.WriteLine("Welcome to our garden!");
             Console.ResetColor();
             Console.WriteLine();
-            Console.WriteLine("This is the place where we grow plants for different purposes!\n" +
-                "Most of all, we grow to provide food for our animals, but also for medicinal purposes!");
+            Console.WriteLine("This is the place where we grow plants for different purposes!");
+            Recover();
             Console.WriteLine();
             MakeSound();
         }
@@ -43,16 +43,17 @@ namespace Labb6_Arv_Zoo
         }
         public void Recover()
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Plants can help you to recover from ilness faster, but also be food." +
-                "our animal looooove to eat plants!");
+                " Our animal looooove to eat plants!");
+            Console.ResetColor();
         }
         public override string ToString()
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            return String.Format("Race: {0}\nName: {1}\nGender: {2}\nWeight: {3} kg\nAge: {4} year\nPower: {5}/10\nGreet: {6}",
+            return String.Format("Race: {0}\nName: {1}\nWeight: {2} kg ++\nAge: {3} year++\nPower: {4}/10\nGreet: {5}",
             this.GetType().Name,
             this.name,
-            this.gender,
             this.weight,
             this.age,
             this.power,
